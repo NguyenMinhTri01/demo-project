@@ -49,7 +49,7 @@
 export default {};
 </script>
 
-<style scope>
+<style scoped>
 .bg-gray {
   background-color: #b7bcbf !important;
 }

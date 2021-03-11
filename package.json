@@ -9,9 +9,16 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.17.3",
+    "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
     "vue": "^2.6.11",
+    "vue-chartjs": "^3.5.1",
     "vue-router": "^3.2.0",
+    "vue-table-dynamic": "^0.4.4",
+    "vue2-datepicker": "^3.9.0",
+    "vuetable-2": "^2.0.0-beta.4",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

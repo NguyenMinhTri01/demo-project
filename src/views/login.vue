@@ -74,7 +74,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
 	/* Coded with love by Mutiullah Samim */
 
     .container.h-100 {
