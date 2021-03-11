@@ -18,7 +18,6 @@
     "vue-router": "^3.2.0",
     "vue-table-dynamic": "^0.4.4",
     "vue2-datepicker": "^3.9.0",
-    "vuetable-2": "^2.0.0-beta.4",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
