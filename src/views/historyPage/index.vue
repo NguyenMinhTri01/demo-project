@@ -11,7 +11,8 @@
             :input-class="'form-control'"
             v-model="fromDate"
             :lang="lang"
-            :format="customFormatter(fromDate)"
+            :format="'YYYY/MM/DD HH:mm'"
+            type="datetime"
           />
         </div>
         <div class="col-3 text-left">
@@ -19,7 +20,8 @@
             :input-class="'form-control'"
             v-model="toDate"
             :lang="lang"
-            :format="customFormatter(toDate)"
+            :format="'YYYY/MM/DD HH:mm'"
+            type="datetime"
           />
         </div>
       </div>
@@ -51,7 +53,7 @@
       </div>
       <div class="row">
         <div class="col-12 text-right">
-          <button class="btn btn-sm btn-primary">Export CSV</button>
+          <button class="btn btn-sm btn-primary">Export Excel</button>
           <vue-table-dynamic :params="params" ref="table"> </vue-table-dynamic>
         </div>
       </div>
@@ -125,4 +127,7 @@ export default {
 </script>
 
 <style scoped>
+.mx-datepicker {
+  width: 100% !important;
+}
 </style>

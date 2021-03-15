@@ -7,13 +7,18 @@ import { BootstrapVue } from "bootstrap-vue";
 Vue.use(BootstrapVue);
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import { fb } from "./firebase"
 
+// config firebase
 
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+fb.auth().onAuthStateChanged(function () {
+  new Vue({
+    router,
+    store,
+    render: h => h(App)
+  }).$mount('#app')
+
+});

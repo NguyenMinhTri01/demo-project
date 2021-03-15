@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <img src="/image/lqtech.jpg" alt="" width="50">
     <button
       class="navbar-toggler"
       type="button"
@@ -14,7 +14,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item ">
           <router-link class="nav-link" :to="`/`"
             >Home <span class="sr-only">(current)</span></router-link
           >

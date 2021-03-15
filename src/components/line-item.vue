@@ -6,10 +6,10 @@
           <th colspan="4">
             <div class="row">
               <h3 class="col-6 text-left text-warning font-weight-bold">
-                LINE 8
+                LINE {{product.line}}
               </h3>
               <h3 class="col-6 text-right text-danger font-weight-bold">
-                17/10/2016 - 08:54:43
+                {{product.hours}}
               </h3>
             </div>
           </th>
@@ -18,27 +18,27 @@
       <tbody>
         <tr>
           <td class="bg-primary">
-            <h4 class="font-weight-bold text-white">MODEL</h4>
+            <h4 class="font-weight-bold text-white">NAME</h4>
           </td>
           <td>
-            <h4 class="text-danger font-weight-bold">A01</h4>
+            <h4 class="text-danger font-weight-bold">{{product.model}}</h4>
           </td>
           <td class="bg-primary">
             <h4 class="font-weight-bold text-white">ID</h4>
           </td>
-          <td><h4 class="text-danger font-weight-bold">AA111</h4></td>
+          <td><h4 class="text-danger font-weight-bold">{{product.id}}</h4></td>
         </tr>
         <tr class="font-weight-bold">
-          <td class="bg-gray">PLANT</td>
-          <td>1200</td>
+          <td class="bg-gray">PLAN</td>
+          <td>{{product.pland}}</td>
           <td class="bg-gray">TARGET</td>
-          <td>600</td>
+          <td>{{product.article}}</td>
         </tr>
         <tr class="font-weight-bold">
-          <td class="bg-gray">ACTUAL</td>
-          <td>597</td>
+          <td class="bg-gray">PRESENT</td>
+          <td>{{product.actual}}</td>
           <td class="bg-gray">HOURS</td>
-          <td>8</td>
+          <td>{{product.hours}}</td>
         </tr>
       </tbody>
     </table>
@@ -46,7 +46,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+   props : ["product"]
+};
 </script>
 
 <style scoped>
@@ -63,5 +65,9 @@ export default {};
 
 div.bg-white:hover {
   background-color: #eef0f1 !important;
+}
+
+.bg-danger {
+  background-color: #af3440 !important;
 }
 </style>
