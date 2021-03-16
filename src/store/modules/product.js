@@ -1,10 +1,10 @@
 const state = {
-  products: []
+  data: null
 };
 
 const mutations = {
   SET_PRODUCT(state, value) {
-    state.products = value;
+    state.data = value;
   },
 };
 

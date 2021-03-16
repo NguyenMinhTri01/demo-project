@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- <p>{{dataTest}}</p> -->
     <div class="my-3 p-4 bg-white rounded box-shadow border-bottom">
       <div class="row">
         <div class="col-3 text-left">TỪ</div>
@@ -53,8 +54,7 @@
       </div>
       <div class="row">
         <div class="col-12 text-right">
-          <button class="btn btn-sm btn-primary">Export Excel</button>
-          <vue-table-dynamic :params="params" ref="table"> </vue-table-dynamic>
+          <Table></Table>
         </div>
       </div>
     </div>
@@ -69,12 +69,13 @@ import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 import "vue2-datepicker/locale/vi";
 import moment from "moment";
-import VueTableDynamic from "vue-table-dynamic";
+import Table from "./../../components/table";
 import AreaChart from "./../../components/areaChart";
+// import { db } from "./../../firebase";
 export default {
   components: {
     DatePicker,
-    VueTableDynamic,
+    Table,
     AreaChart,
   },
   data() {
@@ -87,34 +88,7 @@ export default {
       },
       fromDate: 0,
       toDate: 0,
-      params: {
-        data: [
-          ["NO", "MODEL", "ID", "ACTUAL", "SIZE", "TARGET"],
-          [1, "AA", "012", "55", "45", "20"],
-          [2, "AA", "012", "55", "45", "20"],
-          [3, "AA", "012", "55", "45", "20"],
-          [4, "AA", "012", "55", "45", "20"],
-          [5, "AA", "012", "55", "45", "20"],
-          [6, "AA", "012", "55", "45", "20"],
-          [7, "AA", "012", "55", "45", "20"],
-          [8, "AA", "012", "55", "45", "20"],
-          [9, "AA", "012", "55", "45", "20"],
-          [10, "AA", "012", "55", "45", "20"],
-          [11, "AA", "012", "55", "45", "20"],
-          [12, "AA", "012", "55", "45", "20"],
-          [13, "AA", "012", "55", "45", "20"],
-          [14, "AA", "012", "55", "45", "20"],
-          [15, "AA", "012", "55", "45", "20"],
-        ],
-        header: "row",
-        border: true,
-        stripe: true,
-        enableSearch: true,
-        sort: [0, 1, 2, 3, 4, 5],
-        pagination: true,
-        pageSize: 5,
-        pageSizes: [5, 10, 20, 50],
-      },
+      // dataTest: null,
     };
   },
   methods: {
@@ -122,6 +96,13 @@ export default {
       moment.locale("vi");
       return moment(date).format("L");
     },
+  },
+  created() {
+    // let History = this;
+    // let dataProducts = db.ref("history");
+    // dataProducts.on("value", (snapshot) => {
+    //   History.dataTest = snapshot.val();
+    // });
   },
 };
 </script>

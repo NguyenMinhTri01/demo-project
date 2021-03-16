@@ -2,7 +2,9 @@
   <div class="main">
     <Topnavbar></Topnavbar>
     <router-view />
-    <div class="card-footer text-muted">FOOTER</div>
+    <div class="card-footer text-muted">
+      <p>lorem ipsum lorem</p>
+    </div>
   </div>
 </template>
 

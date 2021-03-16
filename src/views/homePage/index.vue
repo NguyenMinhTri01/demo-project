@@ -1,7 +1,12 @@
 <template>
   <div class="container">
-    <template v-if="products.length > 0">
-      <div v-for="(product, index) in products" :key="index">
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <img src="/image/kiemnghia.jpg" alt="" width="200">
+      </div>
+    </div>
+    <template v-if="productData">
+      <div v-for="product in productData" :key="product.id">
         <template v-if="product">
           <LineItem :product="product"></LineItem>
         </template>
@@ -20,15 +25,22 @@ export default {
   },
   data() {
     return {
-      products: [],
+     
     };
   },
-  mounted() {
+  created() {
     let home = this;
     let dataProducts = db.ref("data_sample");
     dataProducts.on("value", (snapshot) => {
-      home.products = snapshot.val();
+      if(snapshot.val()) {
+        home.$store.dispatch('fetchProducts', snapshot.val());
+      }
     });
+  },
+  computed : {
+    productData () {
+      return this.$store.state.product.data
+    }
   },
 };
 </script>

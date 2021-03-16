@@ -5,26 +5,23 @@
 </template>
 
 <script>
-import { fb } from "./firebase";
+// import { fb } from "./firebase";
 export default {
   created() {
-    const result = this.$store.state.auth.user;
-    if (!result.loggedIn && !localStorage.email && !localStorage.password) {
-      this.$router.replace({ name: "Login" });
-    } else {
-      fb.auth()
-        .signInWithEmailAndPassword(localStorage.email, localStorage.password)
-        .then(() => {
-          this.$store.dispatch("fetchUser", true);
-          setTimeout(() => {
-            this.$router.push({ path: "/" });
-          }, 100);
-        })
-        .catch(() => {
-           this.$router.replace({ name: "Login" });
-        });
-    }
-  },  
+    // const result = this.$store.state.auth.user;
+    // if (!result.loggedIn && !localStorage.email && !localStorage.password) {
+    //   this.$router.replace({ name: "Login" });
+    // } else {
+    //   fb.auth()
+    //     .signInWithEmailAndPassword(localStorage.email, localStorage.password)
+    //     .then(() => {
+    //       this.$store.dispatch("fetchUser", true);
+    //     })
+    //     .catch(() => {
+    //        this.$router.replace({ name: "Login" });
+    //     });
+    // }
+  },
 };
 </script>
 
@@ -47,5 +44,18 @@ html {
 
 .bg-success {
   background-color: #3ab248 !important;
+}
+
+@media only screen and (max-width: 576px) {
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  h4 {
+    font-size: 0.8rem !important;
+  }
+  .container {
+    margin : 0px !important;
+    padding: 0 5px 0 5px !important;
+  }
 }
 </style>

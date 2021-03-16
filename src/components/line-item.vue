@@ -1,5 +1,5 @@
 <template>
-  <div class="my-3 p-4 bg-white rounded box-shadow border-bottom">
+  <div class="my-3 bg-white rounded box-shadow border-bottom">
     <table class="table table-bordered">
       <thead>
         <tr class="bg-success">
@@ -17,24 +17,24 @@
       </thead>
       <tbody>
         <tr>
-          <td class="bg-primary">
+          <td class="bg-primary column1">
             <h4 class="font-weight-bold text-white">NAME</h4>
           </td>
-          <td>
+          <td class="column2">
             <h4 class="text-danger font-weight-bold">{{product.model}}</h4>
           </td>
-          <td class="bg-primary">
+          <td class="bg-primary column3">
             <h4 class="font-weight-bold text-white">ID</h4>
           </td>
           <td><h4 class="text-danger font-weight-bold">{{product.id}}</h4></td>
         </tr>
-        <tr class="font-weight-bold">
+        <tr class="font-weight-bold column1">
           <td class="bg-gray">PLAN</td>
           <td>{{product.pland}}</td>
           <td class="bg-gray">TARGET</td>
           <td>{{product.article}}</td>
         </tr>
-        <tr class="font-weight-bold">
+        <tr class="font-weight-bold column1">
           <td class="bg-gray">PRESENT</td>
           <td>{{product.actual}}</td>
           <td class="bg-gray">HOURS</td>
@@ -69,5 +69,18 @@ div.bg-white:hover {
 
 .bg-danger {
   background-color: #af3440 !important;
+}
+
+.column1 {
+  width: 15%
+}
+.column2 {
+  width: 20%
+}
+.column3 {
+  width: 20%;
+}
+.column4 {
+  width: 45%;
 }
 </style>
