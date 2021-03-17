@@ -1,36 +1,91 @@
 <template>
   <div>
-    <button class="btn btn-sm btn-primary">Export Excel</button>
-    <VueTableDynamic :params="params" ref="table"> </VueTableDynamic>
+    <datatable
+      title="XEM SẢN LƯỢNG HIỆN TẠI (DISPLAY QUANTITY OUPUT PERCENT)"
+      :columns="tableColumns1"
+      :rows="historyData"
+      :perPage="perPage"
+    />
   </div>
 </template>
 
 <script>
-import VueTableDynamic from "vue-table-dynamic";
-
+import DataTable from "vue-materialize-datatable";
 export default {
   components: {
-    VueTableDynamic
+    datatable: DataTable,
   },
-    data() {
+  data() {
     return {
-      params: {
-        data: [
-          ["NO", "NAME", "ID", "PRESENT", "PLAN", "TARGET", "DATE"],
-        ],
-        header: "row",
-        border: true,
-        stripe: true,
-        enableSearch: true,
-        sort: [0, 1, 2, 3, 4, 5],
-        pagination: true,
-        pageSize: 5,
-        pageSizes: [5, 10, 20, 50],
-      },
+      perPage: [5, 10, 20, 30, 50],
+      list: [],
+      tableColumns1: [
+        {
+          label: "ID",
+          field: "id",
+          numeric: true,
+          html: true,
+        },
+        {
+          label: "NAME",
+          field: "name",
+          numeric: false,
+          html: false,
+        },
+        {
+          label: "LINE",
+          field: "line",
+          numeric: false,
+          html: false,
+        },
+        {
+          label: "PLAN",
+          field: "plan",
+          numeric: true,
+          html: false,
+        },
+        {
+          label: "PRESENT",
+          field: "present",
+          numeric: true,
+          html: false,
+        },
+        {
+          label: "TARGET",
+          field: "target",
+          numeric: true,
+          html: false,
+        },
+        {
+          label: "DATE",
+          field: "date",
+          numeric: false,
+          html: false,
+        },
+      ],
+      tableRows1: [
+        {
+          id: 1,
+          date: "16/03/2021 10:35:35 PM",
+          line: "May10",
+          name: "Worker1",
+          plan: 12000,
+          present: 71,
+          target: 1000,
+        },
+      ],
     };
+  },
+  computed : {
+    historyData () {
+      return this.$store.state.history.data
+    }
   },
 };
 </script>
 
 <style>
+ul li {
+  list-style: none;
+}
 </style>
