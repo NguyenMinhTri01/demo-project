@@ -116,7 +116,7 @@ export default {
   },
   created() {
     let History = this;
-    let dataProducts = db.ref("data_sample3");
+    let dataProducts = db.ref("history");
     dataProducts.on("value", (snapshot) => {
       History.$store.dispatch("fetchHistory", snapshot.val());
     });
