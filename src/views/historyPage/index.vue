@@ -30,7 +30,7 @@
             <div class="col-sm-12">
               <DatePicker
                 :input-class="'form-control'"
-                v-model="fromDate"
+                v-model="toDate"
                 :lang="lang"
                 :format="'YYYY/MM/DD HH:mm'"
                 type="datetime"

@@ -5,22 +5,22 @@
 </template>
 
 <script>
-// import { fb } from "./firebase";
+import { fb } from "./firebase";
 export default {
   created() {
-    // const result = this.$store.state.auth.user;
-    // if (!result.loggedIn && !localStorage.email && !localStorage.password) {
-    //   this.$router.replace({ name: "Login" });
-    // } else {
-    //   fb.auth()
-    //     .signInWithEmailAndPassword(localStorage.email, localStorage.password)
-    //     .then(() => {
-    //       this.$store.dispatch("fetchUser", true);
-    //     })
-    //     .catch(() => {
-    //        this.$router.replace({ name: "Login" });
-    //     });
-    // }
+    const result = this.$store.state.auth.user;
+    if (!result.loggedIn && !localStorage.email && !localStorage.password) {
+      this.$router.replace({ name: "Login" });
+    } else {
+      fb.auth()
+        .signInWithEmailAndPassword(localStorage.email, localStorage.password)
+        .then(() => {
+          this.$store.dispatch("fetchUser", true);
+        })
+        .catch(() => {
+           this.$router.replace({ name: "Login" });
+        });
+    }
   },
 };
 </script>
