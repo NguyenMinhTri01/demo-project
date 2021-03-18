@@ -57,29 +57,18 @@ export default {
           html: false,
         },
         {
-          label: "DATE",
-          field: "date",
+          label: "HOURS",
+          field: "hours",
           numeric: false,
           html: false,
         },
       ],
-      tableRows1: [
-        {
-          id: 1,
-          date: "16/03/2021 10:35:35 PM",
-          line: "May10",
-          name: "Worker1",
-          plan: 12000,
-          present: 71,
-          target: 1000,
-        },
-      ],
     };
   },
-  computed : {
-    historyData () {
-      return this.$store.state.history.data
-    }
+  computed: {
+    historyData() {
+      return this.$store.state.history.data;
+    },
   },
 };
 </script>

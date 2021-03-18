@@ -21,7 +21,7 @@
             <h4 class="font-weight-bold text-white">NAME</h4>
           </td>
           <td class="column2">
-            <h4 class="text-danger font-weight-bold">{{product.model}}</h4>
+            <h4 class="text-danger font-weight-bold">{{product.name}}</h4>
           </td>
           <td class="bg-primary column3">
             <h4 class="font-weight-bold text-white">ID</h4>
@@ -30,13 +30,13 @@
         </tr>
         <tr class="font-weight-bold column1">
           <td class="bg-gray">PLAN</td>
-          <td>{{product.pland}}</td>
+          <td>{{product.plan}}</td>
           <td class="bg-gray">TARGET</td>
-          <td>{{product.article}}</td>
+          <td>{{product.target}}</td>
         </tr>
         <tr class="font-weight-bold column1">
           <td class="bg-gray">PRESENT</td>
-          <td>{{product.actual}}</td>
+          <td>{{product.persent}}</td>
           <td class="bg-gray">HOURS</td>
           <td>{{product.hours}}</td>
         </tr>

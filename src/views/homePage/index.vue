@@ -6,7 +6,7 @@
       </div>
     </div>
     <template v-if="productData">
-      <div v-for="product in productData" :key="product.id">
+      <div v-for="(product , key) in productData" :key="key">
         <template v-if="product">
           <LineItem :product="product"></LineItem>
         </template>
@@ -30,7 +30,7 @@ export default {
   },
   created() {
     let home = this;
-    let dataProducts = db.ref("data_sample");
+    let dataProducts = db.ref("data_sample3");
     dataProducts.on("value", (snapshot) => {
       if(snapshot.val()) {
         home.$store.dispatch('fetchProducts', snapshot.val());
