@@ -36,7 +36,7 @@
         </tr>
         <tr class="font-weight-bold column1">
           <td class="bg-gray">PRESENT</td>
-          <td>{{product.persent}}</td>
+          <td>{{product.present}}</td>
           <td class="bg-gray">HOURS</td>
           <td>{{product.hours}}</td>
         </tr>
